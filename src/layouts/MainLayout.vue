@@ -2,24 +2,23 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-btn
+        <!--q-btn
           flat
           dense
           round
-          icon="menu"
+          icon="mdi-menu"
           aria-label="Menu"
           @click="leftDrawerOpen = !leftDrawerOpen"
-        />
+        /-->
 
         <q-toolbar-title>
-          Quasar App
+          Caprica - Scripts Manager
         </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+        <nav-bar />
       </q-toolbar>
     </q-header>
 
-    <q-drawer
+    <!--q-drawer
       v-model="leftDrawerOpen"
       show-if-above
       bordered
@@ -38,7 +37,7 @@
           v-bind="link"
         />
       </q-list>
-    </q-drawer>
+    </q-drawer-->
 
     <q-page-container>
       <router-view />
@@ -95,9 +94,10 @@ const linksData = [
 ]
 
 import { Vue, Component } from 'vue-property-decorator'
+import NavBar from "../components/layout/navigation/NavBar.vue";
 
 @Component({
-  components: { EssentialLink }
+  components: {NavBar, EssentialLink }
 })
 export default class MainLayout extends Vue {
   leftDrawerOpen = false;
