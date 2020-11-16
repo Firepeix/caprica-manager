@@ -32,13 +32,8 @@ export default class Script implements ScriptInterface {
 
   private build () {
     const script : { icon: '', color: ''} = this.localStorage.getItem(this.id) ?? { icon: '', color: '' };
-    if (script !== undefined && script !== null) {
-      this._icon = new Icon(script.icon);
-      this._color = new Color(script.color);
-      return;
-    }
-    this._icon = new Icon('cog');
-    this._color = new Color('red');
+    this._icon = new Icon(script.icon !== '' ? script.icon : 'cog');
+    this._color = new Color(script.color !== '' ? script.color : 'red');
   }
 
   get id (): string {

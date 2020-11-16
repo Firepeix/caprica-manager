@@ -27,7 +27,6 @@ export default class ScriptList extends Vue {
   index () {
     this.scripts = [];
     this.setScripts();
-    console.log('1')
   }
 
   setScripts () {
@@ -39,6 +38,7 @@ export default class ScriptList extends Vue {
   }
 
   __createScriptFromFile (name: string, path: string) : ScriptInterface {
+    console.log(new Script(name.split('.')[0], path, this.$q.localStorage))
     return new Script(name.split('.')[0], path, this.$q.localStorage)
   }
 }

@@ -17,6 +17,9 @@
             <q-btn @click="updateScriptsFolder" icon="mdi-arrow-up-thick"  dense color="positive">
               <q-tooltip>Update Scripts</q-tooltip>
             </q-btn>
+            <q-btn class="q-ml-sm" @click="updateScriptsMetadata" icon="mdi-account"  dense color="red">
+              <q-tooltip>Update Scripts Metadata</q-tooltip>
+            </q-btn>
           </div>
         </div>
       </div>
@@ -38,12 +41,15 @@ export default class ConfigurationForm extends Vue {
 
   updateScriptsFolder () {
     this.$q.localStorage.set('scriptsFolder', this.scriptsFolder)
-    // this.$q.localStorage.set('86894775709016b0770c6483ed2e21a0', { icon: 'vuejs', color: 'blue'})
-    // this.$q.localStorage.set('97064bd25361214db373cefa5532f2de', { icon: 'server-off', color: 'purple-6'})
-    // this.$q.localStorage.set('5b07557d17ffd046b56687b5cce7fbba', { icon: 'docker', color: 'light-blue'})
-    // this.$q.localStorage.set('ec9a9486f7f21e16392176195ef2e556', { icon: 'file-chart', color: 'green-8'})
-    // this.$q.localStorage.set('36bd0c70659527ef3fd9666a8cbcdd30', { icon: 'server', color: 'deep-purple-6'})
-    // this.$q.localStorage.set('8479a6056f5402cbc43aacc25e691c75', { icon: 'briefcase', color: 'red-7'})
+  }
+
+  updateScriptsMetadata () {
+    this.$q.localStorage.set('86894775709016b0770c6483ed2e21a0', { icon: 'vuejs', color: 'blue' })
+    this.$q.localStorage.set('97064bd25361214db373cefa5532f2de', { icon: 'server-off', color: 'purple-6' })
+    this.$q.localStorage.set('5b07557d17ffd046b56687b5cce7fbba', { icon: 'docker', color: 'light-blue' })
+    this.$q.localStorage.set('ec9a9486f7f21e16392176195ef2e556', { icon: 'file-chart', color: 'green-8' })
+    this.$q.localStorage.set('36bd0c70659527ef3fd9666a8cbcdd30', { icon: 'server', color: 'deep-purple-6' })
+    this.$q.localStorage.set('8479a6056f5402cbc43aacc25e691c75', { icon: 'briefcase', color: 'red-7' })
   }
 }
 </script>
