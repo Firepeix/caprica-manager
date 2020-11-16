@@ -6,6 +6,7 @@ import IconInterface from 'src/App/Interface/Primitives/IconInterface';
 import ColorInterface from 'src/App/Interface/Primitives/ColorInterface';
 import Color from 'src/App/Model/Primitives/Color';
 import ChildProcess from 'child_process'
+import HashMapInterface from 'src/App/Interface/Primitives/HashMapInterface';
 
 export default class Script implements ScriptInterface {
   private _id!: string;
@@ -30,11 +31,9 @@ export default class Script implements ScriptInterface {
   }
 
   private build () {
-    const script = this.localStorage.getItem(this.id);
+    const script : { icon: '', color: ''} = this.localStorage.getItem(this.id) ?? { icon: '', color: '' };
     if (script !== undefined && script !== null) {
-      // @ts-ignore
       this._icon = new Icon(script.icon);
-      // @ts-ignore
       this._color = new Color(script.color);
       return;
     }
@@ -69,11 +68,11 @@ export default class Script implements ScriptInterface {
   }
 
   private get scriptAgent () : string {
-    const agentMap = {
+    const agentMap : HashMapInterface = {
       sh: '"C:\\Program Files\\Git\\bin\\bash.exe"',
       bat: 'start'
     };
-    // @ts-ignore
+
     return agentMap[this.fileType];
   }
 

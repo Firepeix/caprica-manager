@@ -14,7 +14,8 @@
               <div class="col flex column justify-center">
                 <div class="row justify-end">
                   <div class="col-2 justify-center column flex">
-                    <q-btn color="positive" icon="mdi-refresh" unelevated class="full-width" label="Update" @click="index"/>
+                    <q-btn color="positive" icon="mdi-refresh" unelevated class="full-width" label="Update"
+                           @click="index"/>
                   </div>
                 </div>
               </div>
@@ -22,7 +23,7 @@
           </q-card-section>
           <q-separator/>
           <q-card-section>
-            <script-list ref="list" />
+            <script-list ref="list"/>
           </q-card-section>
         </q-card>
       </div>
@@ -39,6 +40,10 @@ import ScriptList from 'components/scripts/ScriptList.vue';
   components: { ScriptList, UserScript }
 })
 export default class PageIndex extends Vue {
+  $refs!: {
+    list: ScriptList
+  }
+
   index () {
     this.$refs.list.index();
   }
