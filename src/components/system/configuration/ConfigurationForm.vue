@@ -29,7 +29,7 @@ import { Vue, Component } from 'vue-property-decorator'
 
 @Component
 export default class ConfigurationForm extends Vue {
-  scriptsFolder: string = '';
+  scriptsFolder = '';
   tempScriptFile: File|null = null;
 
   changeScriptsFolder (file: File) {
@@ -45,7 +45,6 @@ export default class ConfigurationForm extends Vue {
     // this.$q.localStorage.set('36bd0c70659527ef3fd9666a8cbcdd30', { icon: 'server', color: 'deep-purple-6'})
     // this.$q.localStorage.set('8479a6056f5402cbc43aacc25e691c75', { icon: 'briefcase', color: 'red-7'})
   }
-
 }
 </script>
 

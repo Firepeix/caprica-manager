@@ -29,9 +29,9 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import ConfigurationForm from "components/system/configuration/ConfigurationForm.vue";
+import ConfigurationForm from 'components/system/configuration/ConfigurationForm.vue';
 @Component({
-  components: {ConfigurationForm}
+  components: { ConfigurationForm }
 })
 export default class ConfigurationPage extends Vue {
 }

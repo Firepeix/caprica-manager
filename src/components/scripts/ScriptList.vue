@@ -7,14 +7,14 @@
 </template>
 
 <script lang="ts">
-import {Vue, Component} from 'vue-property-decorator'
-import UserScript from "./UserScript.vue";
-import ScriptInterface from "src/App/Interface/Script/ScriptInterface";
+import { Vue, Component } from 'vue-property-decorator'
+import UserScript from './UserScript.vue';
+import ScriptInterface from 'src/App/Interface/Script/ScriptInterface';
 import FileSystem from 'fs';
-import Script from "src/App/Model/Script/Script";
+import Script from 'src/App/Model/Script/Script';
 
 @Component({
-  components: {UserScript}
+  components: { UserScript }
 })
 export default class ScriptList extends Vue {
   scripts: ScriptInterface[] = []
@@ -30,7 +30,7 @@ export default class ScriptList extends Vue {
     console.log('1')
   }
 
-  async setScripts () {
+  setScripts () {
     const scriptsFolder = this.$q.localStorage.getItem('scriptsFolder');
     FileSystem.readdir(scriptsFolder, (error, files) => {
       this.scripts = files.map(name => this.__createScriptFromFile(name, scriptsFolder + '\\' + name))
@@ -40,7 +40,6 @@ export default class ScriptList extends Vue {
   __createScriptFromFile (name: string, path: string) : ScriptInterface {
     return new Script(name.split('.')[0], path, this.$q.localStorage)
   }
-
 }
 </script>
 

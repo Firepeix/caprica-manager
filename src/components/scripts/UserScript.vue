@@ -10,13 +10,13 @@
 </template>
 
 <script lang="ts">
-import {Vue, Component, Prop} from 'vue-property-decorator'
-import ScriptInterface from "src/App/Interface/Script/ScriptInterface";
+import { Vue, Component, Prop } from 'vue-property-decorator'
+import ScriptInterface from 'src/App/Interface/Script/ScriptInterface';
 
 @Component
 export default class UserScript extends Vue {
-  @Prop({type: Object, required: true}) readonly script!: ScriptInterface;
-  runScript() {
+  @Prop({ type: Object, required: true }) readonly script!: ScriptInterface;
+  runScript () {
     this.script.run();
   }
 

@@ -94,10 +94,10 @@ const linksData = [
 ]
 
 import { Vue, Component } from 'vue-property-decorator'
-import NavBar from "../components/layout/navigation/NavBar.vue";
+import NavBar from '../components/layout/navigation/NavBar.vue';
 
 @Component({
-  components: {NavBar, EssentialLink }
+  components: { NavBar, EssentialLink }
 })
 export default class MainLayout extends Vue {
   leftDrawerOpen = false;

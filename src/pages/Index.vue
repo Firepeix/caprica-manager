@@ -32,11 +32,11 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import UserScript from "components/scripts/UserScript.vue";
-import ScriptList from "components/scripts/ScriptList.vue";
+import UserScript from 'components/scripts/UserScript.vue';
+import ScriptList from 'components/scripts/ScriptList.vue';
 
 @Component({
-  components: {ScriptList, UserScript }
+  components: { ScriptList, UserScript }
 })
 export default class PageIndex extends Vue {
   index () {
