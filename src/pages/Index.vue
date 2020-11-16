@@ -40,9 +40,7 @@ import ScriptList from 'components/scripts/ScriptList.vue';
 })
 export default class PageIndex extends Vue {
   index () {
-    if (this.$refs !== undefined) {
-      this.$refs.list.index();
-    }
+    this.$refs.list.index();
   }
 }
 </script>

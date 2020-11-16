@@ -32,7 +32,9 @@ export default class Script implements ScriptInterface {
   private build () {
     const script = this.localStorage.getItem(this.id);
     if (script !== undefined && script !== null) {
+      // @ts-ignore
       this._icon = new Icon(script.icon);
+      // @ts-ignore
       this._color = new Color(script.color);
       return;
     }
@@ -71,6 +73,7 @@ export default class Script implements ScriptInterface {
       sh: '"C:\\Program Files\\Git\\bin\\bash.exe"',
       bat: 'start'
     };
+    // @ts-ignore
     return agentMap[this.fileType];
   }
 
