@@ -33,7 +33,8 @@ export default class ScriptList extends Vue {
   setScripts () {
     const scriptsFolder = this.$q.localStorage.getItem('scriptsFolder');
     FileSystem.readdir(scriptsFolder, (error, files) => {
-      this.scripts = files.map(name => this.__createScriptFromFile(name, scriptsFolder + '\\' + name))
+      this.scripts = files.map(name => this.__createScriptFromFile(name, `${scriptsFolder}\\${name}`))
+      console.log(error)
     });
   }
 

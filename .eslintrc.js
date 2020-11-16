@@ -70,6 +70,7 @@ module.exports = {
     // allow async-await
     'generator-star-spacing': 'off',
     // allow paren-less arrow functions
+    "no-unsafe-any": true,
     'arrow-parens': 'off',
     'one-var': 'off',
     "semi": 0,
